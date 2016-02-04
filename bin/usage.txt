@@ -1,21 +1,22 @@
------------------------
- PROJECT_NAME
------------------------
+----------------------------
+ twitter-stream-to-firebase
+----------------------------
 
 Usage:
-  PROJECT_NAME [<TODO_ARGUMENT>] [--no-color] [-v]...
-  PROJECT_NAME -h | --help
-  PROJECT_NAME --version
+  twitter-stream-to-firebase [<track>] [--no-color] [-v]...
+  twitter-stream-to-firebase -h | --help
+  twitter-stream-to-firebase --version
 
 Arguments:
-  TODO_ARGUMENT            Full path of azk binary/link [default: azk].
+  track            Full path of azk binary/link [default: azk].
 
 Options:
-  -h --help               Show this help.
+  --help, -h              Show this help.
   --version, -V           Show version.
   --no-color              Remove colors from output
   --verbose, -v           Sets the level of detail - multiple supported (-vv)
 
 Examples:
-  $ PROJECT_NAME          # TODO_BIN_DESCRIPTION
+  $ twitter-stream-to-firebase          # show this help
+  $ twitter-stream-to-firebase -h       # show this help
 

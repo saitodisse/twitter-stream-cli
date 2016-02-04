@@ -1,10 +1,10 @@
 {
-  "name": "REPLACE_PROJECT_NAME",
+  "name": "twitter-stream-to-firebase",
   "version": "0.0.1",
-  "description": "REPLACE_TODO_DESCRIPTION",
+  "description": "cli tool to send twitter streams to firebase",
   "main": "index.js",
   "bin": {
-    "REPLACE_PROJECT_NAME": "./bin/REPLACE_PROJECT_NAME.js"
+    "twitter-stream-to-firebase": "./bin/twitter-stream-to-firebase.js"
   },
   "scripts": {
     "test": "gulp test",
@@ -13,17 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+REPLACE_PROJECT_GITHUB_URI.git"
+    "url": "git+https://github.com/saitodisse/twitter-stream-to-firebase.git"
   },
   "keywords": [
     "cli tool"
   ],
-  "author": "REPLACE_TODO_AUTHOR",
+  "author": "Julio Makdisse Saito",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "REPLACE_PROJECT_GITHUB_URI/issues"
+    "url": "https://github.com/saitodisse/twitter-stream-to-firebase/issues"
   },
-  "homepage": "REPLACE_PROJECT_GITHUB_URI",
+  "homepage": "https://github.com/saitodisse/twitter-stream-to-firebase",
   "devDependencies": {
     "azk-dev": "^0.3.0",
     "gulp": "^3.9.0",
