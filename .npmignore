@@ -1,0 +1,11 @@
+*.sublime-project
+.editorconfig
+.eslintignore
+.eslintrc
+.npmignore
+.travis.yml
+.env
+gulpfile.js
+lib/spec/
+spec/
+src/

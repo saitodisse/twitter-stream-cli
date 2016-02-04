@@ -1,0 +1,21 @@
+-----------------------
+ PROJECT_NAME
+-----------------------
+
+Usage:
+  PROJECT_NAME [<TODO_ARGUMENT>] [--no-color] [-v]...
+  PROJECT_NAME -h | --help
+  PROJECT_NAME --version
+
+Arguments:
+  TODO_ARGUMENT            Full path of azk binary/link [default: azk].
+
+Options:
+  -h --help               Show this help.
+  --version, -V           Show version.
+  --no-color              Remove colors from output
+  --verbose, -v           Sets the level of detail - multiple supported (-vv)
+
+Examples:
+  $ PROJECT_NAME          # TODO_BIN_DESCRIPTION
+

@@ -1,0 +1,40 @@
+{
+  "name": "REPLACE_PROJECT_NAME",
+  "version": "0.0.1",
+  "description": "REPLACE_TODO_DESCRIPTION",
+  "main": "index.js",
+  "bin": {
+    "REPLACE_PROJECT_NAME": "./bin/REPLACE_PROJECT_NAME.js"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "watch": "gulp watch:test",
+    "deploy": "./node_modules/.bin/npm-deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+REPLACE_PROJECT_GITHUB_URI.git"
+  },
+  "keywords": [
+    "cli tool"
+  ],
+  "author": "REPLACE_TODO_AUTHOR",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "REPLACE_PROJECT_GITHUB_URI/issues"
+  },
+  "homepage": "REPLACE_PROJECT_GITHUB_URI",
+  "devDependencies": {
+    "azk-dev": "^0.3.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "chalk": "^1.1.1",
+    "cli-router": "^0.3.7",
+    "dotenv": "^1.2.0",
+    "lodash.merge": "^4.0.1",
+    "source-map-support": "^0.4.0"
+  }
+}
