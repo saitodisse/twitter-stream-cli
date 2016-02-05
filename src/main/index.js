@@ -1,21 +1,18 @@
-import BB from 'bluebird';
-import merge from 'lodash.merge';
 import dotenv from 'dotenv';
+import Watcher from './watch';
+import Formatter from './formatter';
+import { merge } from 'lodash';
 
 class Main {
   constructor(opts) {
-    this.opts = merge({}, opts);
+    this._opts = merge({}, opts);
     dotenv.load({ silent: true });
   }
 
   run() {
-    return new BB.Promise((resolve, _reject) => {
-      return resolve('TODO: Hello World');
-    })
-    .catch((err) => {
-      console.error(err);
-      return 1;
-    });
+    const watcher = new Watcher();
+    const formatter = new Formatter();
+    return watcher.listen(formatter);
   }
 }
 

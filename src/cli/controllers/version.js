@@ -1,10 +1,10 @@
 import { CliController } from 'cli-router';
+import { resolve } from 'bluebird';
 
 class VersionController extends CliController {
   index() {
     const version = require('../../../../package.json').version;
-    console.log('version: ' + version);
-    return 0;
+    return resolve('version: ' + version);
   }
 }
 

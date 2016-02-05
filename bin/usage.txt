@@ -17,6 +17,7 @@ Options:
   --verbose, -v           Sets the level of detail - multiple supported (-vv)
 
 Examples:
-  $ twitter-stream-to-firebase          # show this help
-  $ twitter-stream-to-firebase -h       # show this help
+  $ twitter-stream-to-firebase            # show this help
+  $ twitter-stream-to-firebase -h         # show this help
+  $ twitter-stream-to-firebase "banana"   # track banana
 

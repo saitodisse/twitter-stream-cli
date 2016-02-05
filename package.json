@@ -36,7 +36,8 @@
     "chalk": "^1.1.1",
     "cli-router": "^0.3.7",
     "dotenv": "^1.2.0",
-    "lodash.merge": "^4.0.1",
-    "source-map-support": "^0.4.0"
+    "lodash": "^4.2.1",
+    "source-map-support": "^0.4.0",
+    "twit": "^2.2.2"
   }
 }
