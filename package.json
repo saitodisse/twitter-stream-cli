@@ -26,6 +26,8 @@
   "homepage": "https://github.com/saitodisse/twitter-stream-to-firebase",
   "devDependencies": {
     "azk-dev": "^0.3.0",
+    "babel-eslint": "^4.1.8",
+    "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.1.1"
   },

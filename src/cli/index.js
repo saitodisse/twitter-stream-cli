@@ -1,7 +1,7 @@
 import path from 'path';
 import chalk from 'chalk';
 
-module.exports = class MainCliRouter {
+class MainCliRouter {
   createCli(opts) {
     const Cli = require('cli-router').Cli;
 
@@ -27,4 +27,6 @@ module.exports = class MainCliRouter {
     // no promise
     process.exit(0);
   }
-};
+}
+
+export default MainCliRouter;

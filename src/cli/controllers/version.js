@@ -1,6 +1,6 @@
 import { CliController } from 'cli-router';
 
-class Version extends CliController {
+class VersionController extends CliController {
   index() {
     const version = require('../../../../package.json').version;
     console.log('version: ' + version);
@@ -8,4 +8,4 @@ class Version extends CliController {
   }
 }
 
-module.exports = Version;
+export default VersionController;

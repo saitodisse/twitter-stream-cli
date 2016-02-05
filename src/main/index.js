@@ -2,7 +2,7 @@ import BB from 'bluebird';
 import merge from 'lodash.merge';
 import dotenv from 'dotenv';
 
-export default class Main {
+class Main {
   constructor(opts) {
     this.opts = merge({}, opts);
     dotenv.load({ silent: true });
@@ -18,3 +18,5 @@ export default class Main {
     });
   }
 }
+
+export default Main;
