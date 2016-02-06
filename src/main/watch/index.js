@@ -7,7 +7,7 @@ class Watcher {
     this._opts = merge({}, opts);
   }
 
-  listen(formatter) {
+  listen(formatter, saver, trackWords) {
     // TODO: return a Rx.Observer
     return new BB.Promise((_resolve, _reject) => {
       const twit = new Twit({
@@ -22,7 +22,7 @@ class Watcher {
       // https://github.com/ttezel/twit#using-the-streaming-api
       //
       const stream = twit.stream('statuses/filter', {
-        track: ['pizza'],
+        track: trackWords,
         language: 'en'
       });
 
@@ -34,7 +34,7 @@ class Watcher {
           /**/require('util').inspect(msg, /* -debug- */
           /**/{ showHidden: false, depth: null, colors: true }), '\n>>---------\n');/* -debug- */
         }
-        // postsRef.push().set(tweet);
+        saver.save(trackWords, msg);
       });
     });
   }

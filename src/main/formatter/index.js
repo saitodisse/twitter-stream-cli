@@ -7,35 +7,32 @@ class Formatter {
   }
 
   _getHashTags(entities) {
-    if (!entities) return '';
-    if (!entities.hashtags) return '';
-
+    if (!entities || !entities.hashtags || entities.hashtags.length === 0) {
+      return '';
+    }
     const results = reduce(entities.hashtags, (prev, curr) => {
       return `${prev} ${c.italic.yellow('#')}${c.italic.yellow(curr.text)}`;
     }, '');
-
     return '\n ' + results;
   }
 
   _getUserMentions(entities) {
-    if (!entities) return '';
-    if (!entities.user_mentions) return '';
-
+    if (!entities || !entities.user_mentions || entities.user_mentions.length === 0) {
+      return '';
+    }
     const results = reduce(entities.user_mentions, (prev, curr) => {
       return `${prev} ${c.italic.green('@')}${c.italic.green(curr.screen_name)}`;
     }, '');
-
     return '\n ' + results;
   }
 
   _getUrls(entities) {
-    if (!entities) return '';
-    if (!entities.urls) return '';
-
+    if (!entities || !entities.urls || entities.urls.length === 0) {
+      return '';
+    }
     const results = reduce(entities.urls, (prev, curr) => {
-      return `${prev} ${c.italic.blue('- ')}${c.italic.blue(curr.expanded_url)}\n`;
+      return `${prev} ${c.italic.blue('- ')}${c.italic.blue(curr.expanded_url)}`;
     }, '');
-
     return '\n ' + results;
   }
 
@@ -46,8 +43,14 @@ class Formatter {
       const userMentions = this._getUserMentions(item.entities);
       const urls = this._getUrls(item.entities);
       // output
-      return (`${c.italic(dateFormated)} @${c.blue.bold(item.user.screen_name)} : ${c.gray(item.id, item.lang)}${hashtags}${userMentions}${urls}
-  ${c.bold(item.text)}\n\n`);
+      return [
+        `@${c.blue.bold(item.user.screen_name)}`,
+        ` : ${c.gray.italic(item.id)} (${c.gray.italic(item.lang)}) ${c.gray.italic(dateFormated)}`,
+        `${hashtags}`,
+        `${userMentions}`,
+        `${urls}`,
+        `\n${c.bold(item.text)}\n\n`
+      ].join('');
     });
   }
 }

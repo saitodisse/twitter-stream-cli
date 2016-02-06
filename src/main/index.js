@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import Watcher from './watch';
 import Formatter from './formatter';
+import Saver from './saver';
 import { merge } from 'lodash';
 
 class Main {
@@ -12,7 +13,8 @@ class Main {
   run() {
     const watcher = new Watcher();
     const formatter = new Formatter();
-    return watcher.listen(formatter);
+    const saver = new Saver();
+    return watcher.listen(formatter, saver, this._opts.track);
   }
 }
 

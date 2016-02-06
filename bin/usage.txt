@@ -3,7 +3,7 @@
 ----------------------------
 
 Usage:
-  twitter-stream-to-firebase [<track>] [--no-color] [-v]...
+  twitter-stream-to-firebase [<track>...] [--no-color] [-v]...
   twitter-stream-to-firebase -h | --help
   twitter-stream-to-firebase --version
 
@@ -19,5 +19,7 @@ Options:
 Examples:
   $ twitter-stream-to-firebase            # show this help
   $ twitter-stream-to-firebase -h         # show this help
-  $ twitter-stream-to-firebase "banana"   # track banana
+  $ twitter-stream-to-firebase banana        # track banana
+  $ twitter-stream-to-firebase banana, pizza   # track banana or pizza
+  $ twitter-stream-to-firebase 'banana pizza'  # track banana and pizza
 
