@@ -8,8 +8,8 @@ class ShortFormatter {
 
   _getShortTweet(tweetText) {
     let result = tweetText.replace(/[\n\r]/g, ' ');
-    if (result.length >= 40) {
-      result = result.substring(0, 40);
+    if (result.length >= 80) {
+      result = result.substring(0, 80);
     }
     return result;
   }

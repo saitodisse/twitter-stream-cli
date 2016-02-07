@@ -23,7 +23,11 @@ class Main {
     .map((tweet) => {
       if (tweet) {
         formatter.format([tweet]).map((line) => console.log(line));
-        saver.save(trackWords, tweet);
+        saver.save(trackWords, {
+          user: tweet.user.screen_name,
+          text: tweet.text,
+          link: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
+        });
       }
     })
     .subscribe();
