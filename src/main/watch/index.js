@@ -23,9 +23,11 @@ class Watcher {
       //
       const stream = twit.stream('statuses/filter', {
         track: trackWords,
+        // TODO: add languages param suport
         language: 'en'
       });
 
+      console.log('start watching for:', trackWords, '-------------------');
       stream.on('tweet', (msg) => {
         if (formatter) {
           formatter.format([msg]).map((line) => console.log(line));
