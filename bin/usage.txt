@@ -3,7 +3,7 @@
 ----------------------------
 
 Usage:
-  twitter-stream-to-firebase [<track>...] [--no-color] [-v]...
+  twitter-stream-to-firebase [<track>...] [--lang=<lang>... --no-color] [-v]...
   twitter-stream-to-firebase -h | --help
   twitter-stream-to-firebase --version
 
@@ -11,15 +11,20 @@ Arguments:
   track            Full path of azk binary/link [default: azk].
 
 Options:
+  --lang=<track>..., -l  Set languages to track
   --help, -h              Show this help.
   --version, -V           Show version.
   --no-color              Remove colors from output
   --verbose, -v           Sets the level of detail - multiple supported (-vv)
 
 Examples:
-  $ twitter-stream-to-firebase            # show this help
-  $ twitter-stream-to-firebase -h         # show this help
-  $ twitter-stream-to-firebase banana        # track banana
-  $ twitter-stream-to-firebase banana, pizza   # track banana or pizza
-  $ twitter-stream-to-firebase 'banana pizza'  # track banana and pizza
+  $ twitter-stream-to-firebase                     # show this help
+  $ twitter-stream-to-firebase -h                  # show this help
+  $ twitter-stream-to-firebase banana              # track banana
+  $ twitter-stream-to-firebase banana, pizza       # track banana or pizza
+  $ twitter-stream-to-firebase 'banana pizza'      # track banana and pizza
+  $ twitter-stream-to-firebase 'banana' --lang pt  # track banana in pt lang
+
+  # track 'banana' in 'pt' and 'en'
+  $ twitter-stream-to-firebase 'banana' --lang pt --lang en
 

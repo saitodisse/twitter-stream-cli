@@ -18,6 +18,7 @@ class ShortFormatter {
     return map(jsonResults, (item) => {
       return [
         `@${c.blue.bold(item.user.screen_name)}`,
+        ` @${c.italic.gray(item.lang)}`,
         `: ${c.bold(this._getShortTweet(item.text))}`
       ].join('');
     });

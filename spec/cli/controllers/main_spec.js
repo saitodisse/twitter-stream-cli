@@ -23,4 +23,16 @@ describe('controller main:', () => {
     const docoptResult = getDocoptResult(['banana pizza']);
     h.expect(docoptResult['<track>']).to.deep.equal(['banana pizza']);
   });
+
+  it('should set option lang to en', () => {
+    const docoptResult = getDocoptResult(['banana', '--lang', 'en']);
+    h.expect(docoptResult['<track>']).to.deep.equal(['banana']);
+    h.expect(docoptResult['--lang']).to.deep.equal(['en']);
+  });
+
+  it('should set option lang to en and pt', () => {
+    const docoptResult = getDocoptResult(['banana', '--lang', 'en', '--lang', 'pt']);
+    h.expect(docoptResult['<track>']).to.deep.equal(['banana']);
+    h.expect(docoptResult['--lang']).to.deep.equal(['en', 'pt']);
+  });
 });

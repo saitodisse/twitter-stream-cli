@@ -7,7 +7,7 @@ class Watcher {
     this._opts = merge({}, opts);
   }
 
-  listen(formatter, saver, trackWords) {
+  listen(formatter, saver, trackWords, languages) {
     // TODO: return a Rx.Observer
     return new BB.Promise((_resolve, _reject) => {
       const twit = new Twit({
@@ -23,11 +23,10 @@ class Watcher {
       //
       const stream = twit.stream('statuses/filter', {
         track: trackWords,
-        // TODO: add languages param suport
-        language: 'en'
+        language: languages
       });
 
-      console.log('start watching for:', trackWords, '-------------------');
+      console.log('start watching for:', trackWords, 'in', languages, '-------------------');
       stream.on('tweet', (msg) => {
         if (formatter) {
           formatter.format([msg]).map((line) => console.log(line));
