@@ -4,18 +4,49 @@
 
 ### Install
 
+Install this tool:
+
 ```sh
 npm install twitter-stream-to-firebase -g
 ```
 
-### Run solo
+
+----------
+
+Create an `.env` file:
+
+```sh
+touch .env
+```
+
+
+----------
+
+Edit `.env` file. Replace `__XXX__` with real valeus:
+
+```sh
+CONSUMER_KEY=__XXX__
+CONSUMER_SECRET=__XXX__
+TOKEN=__XXX__
+TOKEN_SECRET=__XXX__
+FIREBASE_URL=https://__XXX__.firebaseio.com
+```
+
+
+----------
+
+### Run watcher
 
 ```sh
 # will track banana
 twitter-stream-to-firebase banana
 ```
 
+-----------
+
 ### Run multiples with pm2
+
+We can easily run multiples instances of this tool with `pm2`.
 
 #### install pm2
 
