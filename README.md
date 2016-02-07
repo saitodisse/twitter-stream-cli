@@ -74,25 +74,21 @@ Edit `app.json`:
   "apps" : [
     {
       "name"              : "banana",
-      "script"            : "./bin/twitter-stream-to-firebase.js",
+      "script"            : "twitter-stream-to-firebase",
       "args"              : ["banana"],
-      "instances"         : 1,
       "log_date_format"   : "YYYY-MM-DD HH:mm:ss Z",
-      "error_file"        : "./pm2/logs/banana.log",
-      "out_file"          : "./pm2/logs/banana.log",
       "autorestart"       : true,
-      "max_memory_restart": "100M", // 1 megabytes, e.g.: "2G", "10M", "100K", 1024 the default unit is byte.
+      "exec_mode"         : "fork",
+      "max_memory_restart": "100M",
     },
     {
       "name"              : "chocolate",
-      "script"            : "./bin/twitter-stream-to-firebase.js",
+      "script"            : "twitter-stream-to-firebase",
       "args"              : ["chocolate"],
-      "instances"         : 1,
       "log_date_format"   : "YYYY-MM-DD HH:mm:ss Z",
-      "error_file"        : "./pm2/logs/chocolate.log",
-      "out_file"          : "./pm2/logs/chocolate.log",
       "autorestart"       : true,
-      "max_memory_restart": "100M", // 1 megabytes, e.g.: "2G", "10M", "100K", 1024 the default unit is byte.
+      "exec_mode"         : "fork",
+      "max_memory_restart": "100M",
     },
   ]
 }
