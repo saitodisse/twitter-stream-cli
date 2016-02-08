@@ -44,6 +44,8 @@ FIREBASE_URL=https://__XXX__.firebaseio.com
 
 ## Run
 
+[![asciicast](https://asciinema.org/a/9n691flwjn4d43kc9xb9faz8w.png)](https://asciinema.org/a/9n691flwjn4d43kc9xb9faz8w)
+
 ```sh
 # will track banana
 twitter-stream-cli banana
