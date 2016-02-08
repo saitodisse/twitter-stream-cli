@@ -11,6 +11,8 @@ Twitter streams **cli tool**
 
 > This tool requires node.js. I suggest you to use [nvm](https://github.com/creationix/nvm)
 
+[![asciicast](https://asciinema.org/a/0umhwhnylfya0cgbdav7oe2v1.png)](https://asciinema.org/a/0umhwhnylfya0cgbdav7oe2v1)
+
 ```sh
 npm install twitter-stream-cli -g
 ```
