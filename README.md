@@ -12,18 +12,15 @@ Twitter streams **cli tool**
 npm install twitter-stream-cli -g
 ```
 
-----------
+### Configure .env file
 
-Create an `.env` file:
+1) Create an `.env` file:
 
 ```sh
 touch .env
 ```
 
-
-----------
-
-Edit `.env` file. Replace `__XXX__` with real valeus:
+2) Create an app on https://apps.twitter.com/ and put keys on `.env` file:
 
 ```sh
 CONSUMER_KEY=__XXX__
@@ -32,7 +29,6 @@ TOKEN=__XXX__
 TOKEN_SECRET=__XXX__
 FIREBASE_URL=https://__XXX__.firebaseio.com
 ```
-
 
 ----------
 
@@ -60,6 +56,10 @@ twitter-stream-cli banana --json-inspect   #output: inspect json result with col
 ```
 
 ### Send json result to Firebase
+
+1) Edit `.env` file. Replace `__XXX__` on `FIREBASE_URL=https://__XXX__.firebaseio.com`:
+
+2) Send results
 
 ```sh
 twitter-stream-cli banana --send
