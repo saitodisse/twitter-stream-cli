@@ -2,9 +2,10 @@
 
 Twitter streams **cli tool**
 
-- Export results as JSON
 - Can track multiples words
-- Send results to firebase (optional)
+- Output results in several formats
+- Can send results to a Firebase uri
+- You can run various instances with pm2
 
 ## Install
 
