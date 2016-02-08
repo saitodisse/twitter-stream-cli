@@ -45,8 +45,7 @@ class Main {
       if (typeof envValue === 'undefined') {
         console.error(c.red.italic(` - ${envName} is not set.`));
         isOk = false;
-      }
-      if (envValue.indexOf('__XXX__') >= 0) {
+      } else if (typeof envValue === 'string' && envValue.indexOf('__XXX__') >= 0) {
         console.error(c.red.italic(` - error: ${envName} still have __XXX__ template.`));
         isOk = false;
       }
@@ -63,8 +62,10 @@ class Main {
       console.error(c.gray('--------------------------------------------------'));
       console.error(c.yellow('You have to create an `.env` file with valid content before continue.'));
       console.error(c.yellow('You can execute the command bellow then edit your `.env` file:'));
+      console.error(c.gray(''));
       console.error(c.gray('$ wget https://raw.githubusercontent.com/saitodisse/twitter-stream-cli/master/.env-example -O .env'));
-      console.error(c.yellow('reff: https://github.com/saitodisse/twitter-stream-cli#configure-env-file'));
+      console.error(c.gray(''));
+      console.error(c.yellow('Check this link for more info: https://github.com/saitodisse/twitter-stream-cli#configure-env-file'));
       process.exit(1);
     }
     // const stat = Rx.Observable.fromNodeCallback(fs.stat);
