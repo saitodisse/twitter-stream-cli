@@ -49,6 +49,23 @@ twitter-stream-cli banana chocolate
 twitter-stream-cli "banana chocolate"
 ```
 
+### Format output
+
+```sh
+twitter-stream-cli banana --short          #output: @user (lang): 80 char tweet text
+twitter-stream-cli banana --long           #output: @user (lang, id, date): full tweet text
+twitter-stream-cli banana --json           #output: full json result
+twitter-stream-cli banana --json-formatted #output: full formatted json result
+twitter-stream-cli banana --json-inspect   #output: inspect json result with colors
+```
+
+### Send json result to Firebase
+
+```sh
+twitter-stream-cli banana --send
+```
+
+
 -----------
 
 ## Run multiples instances with pm2
