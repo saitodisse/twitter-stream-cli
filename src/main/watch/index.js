@@ -1,5 +1,6 @@
 import Twit from 'twit';
 import { merge } from 'lodash';
+import c from 'chalk';
 import Rx from 'rx';
 
 class Watcher {
@@ -28,7 +29,38 @@ class Watcher {
         observer.onNext(msg);
       });
 
+      stream.on('connected', () => {
+        console.error(c.gray.bold('connected'));
+      });
+
+      stream.on('disconnect', () => {
+        stream.stop();
+        console.error(c.gray.bold('disconnect'));
+      });
+
+      stream.on('reconnecting', (req, res, connectInterval) => {
+        console.error(c.gray.bold('Got disconnected. Scheduling reconnect! statusCode:', res.statusCode, 'connectInterval', connectInterval));
+      });
+
+      stream.on('limit', (limitMsg) => {
+        console.error(c.gray.bold('limit', limitMsg));
+      });
+
       stream.on('error', (err) => {
+        stream.stop();
+        console.error(c.red.bold(err));
+        observer.onError(err);
+      });
+
+      stream.on('parser-error', (err) => {
+        stream.stop();
+        console.error(c.red.italic(err.statusCode));
+        console.error(c.red.italic(err.twitterReply));
+
+        if (err.statusCode === 401) {
+          console.error(c.red.bold('Please re-check your `.env` file'));
+        }
+
         observer.onError(err);
       });
 
