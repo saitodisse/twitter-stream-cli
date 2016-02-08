@@ -3,7 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## dev v0.0.1 (2016-02-04)
+## dev v0.1.0 (2016-02-08)
 
 * Enhancements
-  - [Code] Initial Version
+  - [Cli] Track several words
+  - [Cli] Various formatters
+  - [Cli] Can send results to Firebase

@@ -1,6 +1,6 @@
 {
   "name": "twitter-stream-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Twitter streams cli tool",
   "main": "index.js",
   "bin": {

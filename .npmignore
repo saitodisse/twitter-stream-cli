@@ -5,7 +5,9 @@
 .npmignore
 .travis.yml
 .env
+.env-example
 gulpfile.js
 lib/spec/
 spec/
 src/
+pm2/
