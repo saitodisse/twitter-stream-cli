@@ -9,6 +9,8 @@ Twitter streams **cli tool**
 
 ## Install
 
+> This tool requires node.js. I suggest you to use [nvm](https://github.com/creationix/nvm)
+
 ```sh
 npm install twitter-stream-cli -g
 ```
@@ -78,14 +80,13 @@ twitter-stream-cli banana --send
 
 We can easily run multiples instances of this tool with `pm2`.
 
-#### install pm2
+#### Install pm2
 
 ```sh
-# install pm2
 npm i pm2 -g
 ```
 
-#### create configuration files
+#### Create configuration files
 
 Create `app.json`
 
