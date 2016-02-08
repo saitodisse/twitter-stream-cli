@@ -1,7 +1,7 @@
 {
   "name": "twitter-stream-cli",
   "version": "0.0.1",
-  "description": "cli tool to send twitter streams to firebase",
+  "description": "Twitter streams cli tool",
   "main": "index.js",
   "bin": {
     "twitter-stream-cli": "./bin/twitter-stream-cli.js"
