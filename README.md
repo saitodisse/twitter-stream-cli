@@ -1,15 +1,16 @@
-# twitter-stream-to-firebase
+# twitter-stream-cli
 
-**Cli tool** to send twitter streams to firebase
+Twitter streams **cli tool**
 
-### Install
+- Export results as JSON
+- Can track multiples words
+- Send results to firebase (optional)
 
-Install this tool:
+## Install
 
 ```sh
-npm install twitter-stream-to-firebase -g
+npm install twitter-stream-cli -g
 ```
-
 
 ----------
 
@@ -35,16 +36,22 @@ FIREBASE_URL=https://__XXX__.firebaseio.com
 
 ----------
 
-### Run watcher
+## Run
 
 ```sh
 # will track banana
-twitter-stream-to-firebase banana
+twitter-stream-cli banana
+
+# will track banana tweets OR chocolate tweets
+twitter-stream-cli banana chocolate
+
+# will track banana and chocolate in the same tweet message
+twitter-stream-cli "banana chocolate"
 ```
 
 -----------
 
-### Run multiples with pm2
+## Run multiples instances with pm2
 
 We can easily run multiples instances of this tool with `pm2`.
 
@@ -74,7 +81,7 @@ Edit `app.json`:
   "apps" : [
     {
       "name"              : "banana",
-      "script"            : "twitter-stream-to-firebase",
+      "script"            : "twitter-stream-cli",
       "args"              : ["banana"],
       "log_date_format"   : "YYYY-MM-DD HH:mm:ss Z",
       "autorestart"       : true,
@@ -83,7 +90,7 @@ Edit `app.json`:
     },
     {
       "name"              : "chocolate",
-      "script"            : "twitter-stream-to-firebase",
+      "script"            : "twitter-stream-cli",
       "args"              : ["chocolate"],
       "log_date_format"   : "YYYY-MM-DD HH:mm:ss Z",
       "autorestart"       : true,
@@ -119,11 +126,13 @@ pm2 monit
 pm2 delete all
 ```
 
-### Test and run locally
+## Test and run locally
 
 ```sh
+git clone git@github.com:saitodisse/twitter-stream-cli.git
+cd twitter-stream-cli
 npm install
 npm test
-node ./bin/twitter-stream-to-firebase.js -h
+node ./bin/twitter-stream-cli.js -h
 ```
 

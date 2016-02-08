@@ -1,11 +1,11 @@
 ----------------------------
- twitter-stream-to-firebase
+ twitter-stream-cli
 ----------------------------
 
 Usage:
-  twitter-stream-to-firebase [<track>...] [--lang=<lang>... --no-color] [-v]...
-  twitter-stream-to-firebase -h | --help
-  twitter-stream-to-firebase --version
+  twitter-stream-cli [<track>...] [--lang=<lang>... --no-color] [-v]...
+  twitter-stream-cli -h | --help
+  twitter-stream-cli --version
 
 Arguments:
   track            Full path of azk binary/link [default: azk].
@@ -18,13 +18,13 @@ Options:
   --verbose, -v           Sets the level of detail - multiple supported (-vv)
 
 Examples:
-  $ twitter-stream-to-firebase                     # show this help
-  $ twitter-stream-to-firebase -h                  # show this help
-  $ twitter-stream-to-firebase banana              # track banana
-  $ twitter-stream-to-firebase banana, pizza       # track banana or pizza
-  $ twitter-stream-to-firebase 'banana pizza'      # track banana and pizza
-  $ twitter-stream-to-firebase 'banana' --lang pt  # track banana in pt lang
+  $ twitter-stream-cli                     # show this help
+  $ twitter-stream-cli -h                  # show this help
+  $ twitter-stream-cli banana              # track banana
+  $ twitter-stream-cli banana, pizza       # track banana or pizza
+  $ twitter-stream-cli 'banana pizza'      # track banana and pizza
+  $ twitter-stream-cli 'banana' --lang pt  # track banana in pt lang
 
   # track 'banana' in 'pt' and 'en'
-  $ twitter-stream-to-firebase 'banana' --lang pt --lang en
+  $ twitter-stream-cli 'banana' --lang pt --lang en
 
