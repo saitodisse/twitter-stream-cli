@@ -20,7 +20,7 @@ class Main {
     const willSendToFirebase = this._opts.send;
 
     console.error('# watching for:', trackWords, 'in', languages, '-------------------');
-    const watcher$ = watcher.listen(trackWords, languages)
+    return watcher.listen(trackWords, languages)
     .map((tweet) => {
       if (tweet) {
         formatter.format([tweet]).map((line) => console.log(line));
@@ -28,10 +28,7 @@ class Main {
           saver.save(trackWords, tweet);
         }
       }
-    })
-    .subscribe();
-
-    return watcher$;
+    });
   }
 }
 

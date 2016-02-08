@@ -13,7 +13,8 @@ class MainCliRouter {
   }
 
   run(args) {
-    return this._cli.run({ argv: args });
+    const result$ = this._cli.run({ argv: args });
+    result$.forEach((result) => result && console.error(result));
   }
 }
 

@@ -1,10 +1,10 @@
 import { CliController } from 'cli-router';
-import { resolve } from 'bluebird';
+import Rx from 'rx';
 
 class VersionController extends CliController {
   index() {
     const version = require('../../../../package.json').version;
-    return resolve('version: ' + version);
+    return Rx.Observable.of('version: ' + version);
   }
 }
 
