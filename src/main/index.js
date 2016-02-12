@@ -1,8 +1,6 @@
 import dotenv from 'dotenv';
-import Watcher from './watch';
-import Saver from './saver';
+import Watcher from '../watch';
 import { merge } from 'lodash';
-import Formatter from './formatter';
 import c from 'chalk';
 
 class Main {
@@ -13,32 +11,10 @@ class Main {
 
   run() {
     this.checkEnvs(this._opts.send);
-
     const watcher = new Watcher();
-    const formatter = new Formatter(this._opts);
-
     const trackWords = this._opts.track;
     const languages = this._opts.lang;
-    const willSendToFirebase = this._opts.send;
-
-    console.error(c.gray('-----------------'));
-    console.error('# Tracking tweets:', trackWords);
-    console.error('# Languages:', languages);
-    if (this._opts.send) {
-      console.error('# Firebase repository:', process.env.FIREBASE_URL);
-    }
-    console.error(c.gray('-----------------'));
-
-    return watcher.listen(trackWords, languages)
-    .map((tweet) => {
-      if (tweet) {
-        formatter.format([tweet]).map((line) => console.log(line));
-        if (willSendToFirebase) {
-          const saver = new Saver();
-          saver.save(trackWords, tweet);
-        }
-      }
-    });
+    return watcher.listen(trackWords, languages);
   }
 
   checkEnvs(willSend) {
