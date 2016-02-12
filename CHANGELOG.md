@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v0.1.7 (2016-02-12)
+
+* Enhancements
+  - [Code] Remove outputs from main class
+
 ## v0.1.4 (2016-02-08)
 
 * Bug
