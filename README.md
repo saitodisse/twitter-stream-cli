@@ -1,6 +1,6 @@
 # twitter-stream-cli
 
-Twitter streams **cli tool**
+Twitter streams. This is a **cli tool** and also a **npm lib**.
 
 - Can track multiples words
 - Output results in several formats
@@ -42,7 +42,7 @@ FIREBASE_URL=https://__XXX__.firebaseio.com
 
 ----------
 
-## Run
+## Run as cli tool
 
 [![asciicast](https://asciinema.org/a/9n691flwjn4d43kc9xb9faz8w.png)](https://asciinema.org/a/9n691flwjn4d43kc9xb9faz8w)
 
@@ -154,6 +154,38 @@ pm2 monit
 pm2 delete all
 ```
 
+-----------
+
+## Use as lib
+
+#### Install
+
+```sh
+npm install twitter-stream-cli --save
+```
+
+#### Use
+
+```js
+// ES5
+var TwiterStream require('twitter-stream-cli');
+var twiterStream = new TwiterStream({
+  track: 'banana'
+});
+return twiterStream.run();
+```
+
+```js
+// ES6
+import TwiterStream from 'twitter-stream-cli';
+const twiterStream = new TwiterStream({
+  track: 'banana'
+});
+return twiterStream.run();
+```
+
+---------
+
 ## Test and run locally
 
 ```sh
@@ -162,5 +194,8 @@ cd twitter-stream-cli
 npm install
 npm test
 node ./bin/twitter-stream-cli.js -h
+
+# all available tasks
+gulp help
 ```
 
