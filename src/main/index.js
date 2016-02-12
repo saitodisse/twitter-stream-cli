@@ -24,6 +24,9 @@ class Main {
     console.error(c.gray('-----------------'));
     console.error('# Tracking tweets:', trackWords);
     console.error('# Languages:', languages);
+    if (this._opts.send) {
+      console.error('# Firebase repository:', process.env.FIREBASE_URL);
+    }
     console.error(c.gray('-----------------'));
 
     return watcher.listen(trackWords, languages)
