@@ -1,4 +1,4 @@
-# twitter-stream-cli
+# twitter-stream-cli 0.2.1
 
 Twitter streams. This is a **cli tool** and also a **npm lib**.
 
