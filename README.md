@@ -2,10 +2,10 @@
 
 Twitter streams. This is a **cli tool** and also a **npm lib**.
 
-- Can track multiples words
+- Track multiples words
 - Output results in several formats
-- Can send results to a Firebase uri
-- You can run various instances with pm2
+- Send results to a `Firebase Database`
+- Instructions to run severals instances with `pm2`
 
 ## Install
 
@@ -36,8 +36,9 @@ CONSUMER_SECRET=__XXX__
 TOKEN=__XXX__
 TOKEN_SECRET=__XXX__
 
-# [optional] Firebase URL: https://www.firebase.com/account
-FIREBASE_URL=https://__XXX__.firebaseio.com
+# [optional] Firebase: https://console.firebase.google.com
+FIREBASE_APIKEY=__XXX__
+FIREBASE_DATABASEURL=__XXX__
 ```
 
 ----------
